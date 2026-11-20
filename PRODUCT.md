@@ -8,9 +8,11 @@ web
 
 ## Stack
 
-Delegated: a single self-contained `index.html` (inline CSS + vanilla JS, no build step, no install). Chosen because a teacher can double-click it, run it offline, share it as one file, and screen-share it from any laptop. State (kids, stars, prizes, uploaded prize photos) lives in the browser's `localStorage`. Fonts are embedded as base64 so it renders correctly offline.
+React 19 + Vite, backed by Supabase (project "roshie rewards"). Converted from the original single-file `index.html` on 2026-11-20 with the craft-paper design and every feature kept the same.
 
-The user expected React and asked (2026-11-18) to **convert to React later**; until then the single file stays.
+- **Signed-in teachers** (email + password, Supabase Auth): the board lives in Postgres (`boards`, `kids`, `prizes`, row level security so each teacher sees only their own rows) and prize photos live in the private `prize-photos` storage bucket. Changes save automatically; failed saves retry, so a dropped connection never loses a star.
+- **Without an account** ("Use without an account"): the board lives in this browser's `localStorage`, exactly like the old single file. The first time that teacher signs in, this board moves into their account.
+- Fonts (Andika, Bagel Fat One) are bundled as local `.woff2` files, no font CDN.
 
 ## Users
 
@@ -41,7 +43,7 @@ Inferred (user gave no preference; design must hold for all):
 - **The wheel is hidden on the board.** It only comes out when a reward is claimed (and as a live preview beside the editor on desktop). Winning shows "Good job, NAME!" with the prize and confetti.
 - Prize wheel with teacher-editable rewards (2–12): add, rename, remove, choose a color and a drawn picture, or **upload a photo** per prize (Wheel of Names style), including adding several prizes from photos at once or by drag and drop.
 - Reset for a new lesson.
-- Works offline, no accounts, no server.
+- Teacher accounts keep the board on every computer; "Use without an account" keeps the old no-account, this-browser-only mode.
 - Terminology: "stars", "star goal", "claim reward", "rewards", "prize wheel".
 
 ## Evidence on Hand

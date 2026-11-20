@@ -489,7 +489,7 @@ All components are tactile and sticky: thick paper, sticker edges, a spring when
 - **Count chip:** white paper at 16px radius, tilted 1.5deg, holding a foil star and a Bagel numeral. The numeral bumps on every change.
 - **Rail:** white paper with fibre grain, 10px radius and a recess, holding one slot per star in the goal (1–10; free spins shows 10). Empty slots are crayon outlines and filled slots are foil stickers.
 - **Actions:** an undo disc (46px, a minus glyph, 50% opacity when nothing can be undone) and the **star button**, a white paper disc showing a smiling foil star with a green plus badge. The star button's hover is scale 1.06 and rotate −5deg. Its press is scale .93 with Lift-sm, and a keyboard press uses the same state.
-- **Add a kid:** a white paper tile with a 3px dashed border at 35% ink, tilted −1.5deg, shown while fewer than three kids exist.
+- **Adding kids:** only in the Prizes & kids drawer (the board has no add-kid tile, by the teacher's request on 2026-11-20).
 - **Sticky-note tip:** a yellow note tilted 1.2deg that explains the big star button and the keys. It is removed after the first star.
 
 ### Claim Pill and "N more" Label
